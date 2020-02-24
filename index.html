@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!DOCTYPE html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubiqum Boosktore</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="./styles/css.css">
+</head>
+<body>
+    <a id="button"></a>
+    <div id='app'> 
+        <header><a href="index.html">
+            <img class="logo img-responsive" src="./images/output_eg0pa7.gif" alt="bookstore" height="150px">
+        </a><h1 class="title"><strong class="strong">Ubiqum</strong> Bookstore</h1></header>
+         <div class="social-icons">
+                <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin" aria-hidden="true"></a>
+                <a href="https://www.github.com/kinatzu"  target="_blank" class="fa fa-github" aria-hidden="true"></a>
+            </div>
+        <div class="searchbar">
+            <form class="form-inline my-2 my-lg-0">
+                <div class="langButtons">
+                <button class="btn btn-secondary my-2 my-sm-0" v-model="es" type="ES">ES</button>
+                <button class="btn btn-secondary my-2 my-sm-0" v-model="en" type="EN">EN</button>
+                </div>
+                <input class="form-control mr-sm-2" v-model="search" type="text" placeholder="Search your book">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+        </div>
+        <!-- <hr> -->
+        <div class="container col-md-10 col-md-offset-2" id="mainDisplay">
+            <div class="previewBox boxShadow flip-card" v-for="book in filteredBooks">
+
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+
+                        <img class="previewImage boxShadow" v-bind:src="book.portada" />
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>{{book.titulo}}</h1>
+                        <p>{{book.descripcion}}</p>
+                        <backbutton v-bind:href="book.detalle"></backbutton>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
