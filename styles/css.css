@@ -1,6 +1,9 @@
 body{
     background-image: url(../images/dot-grid.png);
 }
+h1{
+    color: #f4f5f9;
+}
 header{
     padding: 50px 100px 50px 470px;
     display: flex;
@@ -72,16 +75,18 @@ img {
 }
 .flip-card-front {
     background-color: #bbb;
-    color: black;
+    color: #141414;
 }
 .flip-card-back {
-    background-color: #f4f5f9;
-    color: black;
+    background-color: #141414;
+    color: #f4f5f9;
     transform: rotateY(180deg);
     padding: 20px;
 }
 .cardButton {
-    color: black;
+    color: black !important;
+    font-weight: bold;
+    background-color: white !important;
     outline: none;
     position:inherit;
     display: flex;
